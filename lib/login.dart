@@ -13,11 +13,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final username = TextEditingController();
+  final password = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final username = TextEditingController();
-    final password = TextEditingController();
-
     @override
     void dispose() {
       username.dispose();
@@ -48,7 +47,6 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: TextField(
               controller: username,
-              onChanged: (value) => username.text = value,
               style: const TextStyle(color: Colors.white),
               cursorColor: Colors.white,
               decoration: InputDecoration(
@@ -70,7 +68,6 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: TextField(
               controller: password,
-              onChanged: (value) => password.text = value,
               style: const TextStyle(color: Colors.white),
               cursorColor: Colors.white,
               obscureText: true,

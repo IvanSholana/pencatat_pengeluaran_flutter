@@ -33,10 +33,7 @@ class _MainScreens extends State<MainScreen> {
   Widget? activeScreen;
   @override
   void initState() {
-    activeScreen = HomeScreen(
-      LogoutScreen: logOut,
-      pengeluaran: listPengeluaran,
-    );
+    activeScreen = LoginScreen(cekUser: _ValidationLogin);
     super.initState();
   }
 
@@ -58,6 +55,8 @@ class _MainScreens extends State<MainScreen> {
 
   void ShowOverlay() {
     showModalBottomSheet(
+        useSafeArea: true,
+        isScrollControlled: true,
         context: context,
         builder: (context) => OverlayForm(
               addPengeluaran: addPengeluaran,
